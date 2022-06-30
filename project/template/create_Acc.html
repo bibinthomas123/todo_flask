@@ -1,0 +1,118 @@
+{%extends "base.html"%}
+{%block title %}Create account{% endblock %}
+{%block head %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        letter-spacing: -0.02em;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .heading {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 56px;
+    }
+
+    .br {
+        border-bottom: 2px solid black;
+    }
+
+    .create {
+        position: absolute;
+        width: 556px;
+        height: 48px;
+        left: 476px;
+        top: 147px;
+
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 56px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.02em;
+    }
+
+    .box {
+        position: absolute;
+        width: 620px;
+        height: 470px;
+        left: 442px;
+        top: 238px;
+
+        background: #FFFFFF;
+        border: 2px solid #000000;
+    }
+
+    .full_name {
+
+        font-family: 'Work Sans';
+        font-weight: 500;
+        font-size: 33px;
+        line-height: 47px;
+    }
+
+    .submit {
+        position: absolute;
+        width: 222px;
+        height: 67px;
+        left: 177px;
+        top: 381px;
+        background: #000000;
+        border: 2px solid #000000;
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 29px;
+        line-height: 47px;
+    }
+</style>
+
+{%endblock%}
+
+
+{%block body %}
+<!--  mb-4  -->
+
+<div class="container-fluid br ">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between pt-2 px-3 border-bottom ">
+        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <p class="heading">TO-DO</p>
+        </a>
+    </header>
+</div>
+
+<div class="container-fluid border">
+    <section class="d-flex align-items-center justify-content-center create ">
+        <p>Create Account</p>
+    </section>
+</div>
+
+<div class="container-fluid  box">
+    <form action="/" method="post"></form>
+    <label class="full_name mx-4 my-3">Full_name</label><br>
+    <input type="text" class="p-2 w-75 mx-4 br" name="full_name" id="fname"><br>
+    <label class="full_name px-4 py-3">User_name</label>
+    <input type="text" class="p-2 w-75 mx-4 br" name="user_name" id="uname"><br>
+    <label class="full_name px-4 py-3">Pass_word</label>
+    <input type="text" class="p-2 w-75 mx-4 br" name="password" id="pname"><br>
+    <input type="submit" class="btn btn-dark submit " value="Create">
+    </form>
+
+</div>
+
+
+
+{%endblock%}
