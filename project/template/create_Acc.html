@@ -101,14 +101,17 @@
 </div>
 
 <div class="container-fluid  box">
-    <form action="/" method="post"></form>
-    <label class="full_name mx-4 my-3">Full_name</label><br>
-    <input type="text" class="p-2 w-75 mx-4 br" name="full_name" id="fname"><br>
-    <label class="full_name px-4 py-3">User_name</label>
-    <input type="text" class="p-2 w-75 mx-4 br" name="user_name" id="uname"><br>
-    <label class="full_name px-4 py-3">Pass_word</label>
-    <input type="text" class="p-2 w-75 mx-4 br" name="password" id="pname"><br>
-    <input type="submit" class="btn btn-dark submit " value="Create">
+    <form action="/login" method="post">
+        <label class="full_name mx-4 my-3">Full_name</label><br>
+        <input type="text" class="p-2 w-75 mx-4 br" name="full_name" id="fname" autocapitalize="words"
+            autocomplete="name"><br>
+        <label class="full_name px-4 py-3">User_name</label>
+        <input type="text" class="p-2 w-75 mx-4 br" name="user_name" id="uname" autocapitalize="words"
+            autocomplete="username"><br>
+        <label class="full_name px-4 py-3">Pass_word</label>
+        <input type="text" class="p-2 w-75 mx-4 br" name="password" id="pname" autocapitalize="words"
+            autocomplete="current-password"><br>
+        <input type="submit" class="btn btn-dark submit " value="Create">
     </form>
 
 </div>
