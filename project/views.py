@@ -12,7 +12,7 @@ views = Blueprint('views', __name__)
 
 @views.route("/")
 def home():
-    return "<h1>hello</h1>" 
+    return f'<h1>hello</h1>'
 
 @views.route("/todo")
 def todo():
