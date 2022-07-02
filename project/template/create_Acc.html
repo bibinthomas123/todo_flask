@@ -14,7 +14,8 @@
         height: 100vh;
     }
 
-    .heading {
+    .heading,
+    .signin {
         font-family: 'Work Sans';
         font-style: normal;
         font-weight: 700;
@@ -78,7 +79,6 @@
         line-height: 47px;
     }
 </style>
-
 {%endblock%}
 
 
@@ -91,6 +91,7 @@
         <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             <p class="heading">TO-DO</p>
         </a>
+        <a href="/login" class="link-dark text-decoration-none text-dark signin" style="font-size: 22px;">Sign in</a>
     </header>
 </div>
 
@@ -100,22 +101,52 @@
     </section>
 </div>
 
+
 <div class="container-fluid  box">
-    <form action="/login" method="post">
+    <form action="/sign-up" method="post">
         <label class="full_name mx-4 my-3">Full_name</label><br>
-        <input type="text" class="p-2 w-75 mx-4 br" name="full_name" id="fname" autocapitalize="words"
-            autocomplete="name"><br>
+        <input type="text" class="p-2  mx-4 br" name="new_full_name" id="full_name" style="width:85%;"
+            autocapitalize="words" value="" required autocomplete="name"><br>
         <label class="full_name px-4 py-3">User_name</label>
-        <input type="text" class="p-2 w-75 mx-4 br" name="user_name" id="uname" autocapitalize="words"
-            autocomplete="username"><br>
+        <input type="text" class="p-2  mx-4 br" name="new_user_name" id="user_name" style="width:85%;"
+            autocapitalize="words" value="" required><br>
         <label class="full_name px-4 py-3">Pass_word</label>
-        <input type="text" class="p-2 w-75 mx-4 br" name="password" id="pname" autocapitalize="words"
-            autocomplete="current-password"><br>
-        <input type="submit" class="btn btn-dark submit " value="Create">
+        <input type="password" class="p-2  mx-4 br" name="new_password" id="password" style="width:85%;"
+            autocapitalize="words" value="" required><br>
+        <input type="submit" class="btn btn-dark submit " id="button" value="Create" >
     </form>
 
 </div>
 
+<script>
+
+
+    function datavalidation() {
+        var full_name = document.getElementById("full_name")
+        var user_name = document.getElementById("user_name")
+        var password = document.getElementById("password")
+        var button = document.getElementById("button")
+        const regex = new RegExp(/^[A-Za-z][A-Za-z0-9_]{7,29}$/);
+
+        if (full_name.value == " " || full_name.value.length <= 0) {
+            alert("Enter the name to continue");
+            full_name.focus();
+            full_name.select();
+            return false;
+        }
+        if (!regex.test(user_name.value) || user_name.value == " " || user_name.value.length <= 0) {
+            user_name.focus();
+            user_name.select();
+            return false;
+        }
+        if (!regex.test(password.value) || password.value == " " ||password.value.length <= 0) {
+            password.focus();
+            password.select();
+            return false;
+        }
+        console.log(regex.test(password.value))
+    }
+</script>
 
 
 {%endblock%}

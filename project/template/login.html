@@ -2,7 +2,81 @@
 {%block title %}Login{% endblock %}
 {%block head %}
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        letter-spacing: -0.02em;
+    }
 
+    body {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .heading,.signin {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 56px;
+    }
+
+    .br {
+        border-bottom: 2px solid black;
+    }
+
+    .create {
+        position: absolute;
+        width: 556px;
+        height: 48px;
+        left: 476px;
+        top: 147px;
+
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 56px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.02em;
+    }
+
+    .box {
+        position: absolute;
+        width: 546px;
+        height: 370px;
+        left: 480px;
+        top: 238px;
+
+        background: #FFFFFF;
+        border: 2px solid #000000;
+    }
+
+    .full_name {
+
+        font-family: 'Work Sans';
+        font-weight: 500;
+        font-size: 33px;
+        line-height: 47px;
+    }
+
+    .submit {
+        position: absolute;
+        width: 222px;
+        height: 67px;
+        left: 164px;
+        top: 277px;
+        background: #000000;
+        border: 2px solid #000000;
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 29px;
+        line-height: 47px;
+    }
 </style>
 
 {%endblock%}
@@ -10,8 +84,38 @@
 
 {%block body %}
 <nav>
-    <div class="container-fluid border"> </div>
+
+    <div class="container-fluid br ">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between pt-2 px-3 border-bottom ">
+            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <p class="heading">TO-DO</p>
+            </a>
+        </header>
+    </div>
 </nav>
+
+<div class="container-fluid border">
+    <section class="d-flex align-items-center justify-content-center create ">
+        <p>Login</p>
+    </section>
+</div>
+
+<div class="box">
+    <form action="/" method="post">
+        <label class="full_name mx-4 my-3 ">Full_name</label><br>
+        <input type="text" class="p-2  mx-4 br" name="full_name" id="old_full_name"  style="width:85%;" autocapitalize="words"
+            autocomplete="name"><br>
+
+            <label class="full_name px-4 py-3">Pass_word</label>
+            <input type="password" class="p-2  mx-4 br" name="password" id="old_password"  style="width:85%;"  autocapitalize="words"
+                autocomplete="current-password"><br>
+            <input type="submit" class="btn btn-dark submit " value="Login">
+    </form>
+    
+</div>
+<a href="/" class=" link-dark text-decoration-none text-dark signin position-absolute  " style="font-size: 22px;bottom:8%; left:44%">Create Account</a>
+
 
 
 
