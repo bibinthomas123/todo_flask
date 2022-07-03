@@ -1,3 +1,4 @@
+from time import sleep
 from flask import Blueprint, render_template, request, flash, redirect, url_for, flash
 from .model import User
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,16 +16,19 @@ def login():
         username = request.form.get("user_name")
         password = request.form.get('password')
 
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(username=username).first() 
         if user:
             if check_password_hash(user.password, password):
-                flash('Logged in successfully!', category='success')
+                # flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
+                print("passed checking")
                 return redirect(url_for('views.home'))
             else:
-                flash('Incorrect password, try again.', category='error')
+                # flash('Incorrect password, try again.', category='error')
+                print("error password")
         else:
-            flash('Username does not exist.', category='error')
+            # flash('Username does not exist.', category='error')
+            print("error")
 
     return render_template("login.html", user=current_user)
 
@@ -52,13 +56,12 @@ def sign_up():
             flash('Password must be at least 7 characters.', category='error')
         else:
             try:
-                new_user = User(username=username, password=generate_password_hash(
-                    password, method='sha256'), first_name=firstname)
+                new_user = User(username=username, password=generate_password_hash(password, method='sha256'), first_name=firstname)
                 db.session.add(new_user)
                 db.session.commit()
                 print("added user")
                 login_user(new_user, remember=True)
-                flash('Account created!', category='success')
+                # flash('Account created!', category='success')
                 return redirect(url_for('views.home'))
             except IntegrityError:
                 db.session.rollback()
