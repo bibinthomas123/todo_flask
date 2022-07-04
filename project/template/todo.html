@@ -7,7 +7,7 @@
 
     .wel {
         position: absolute;
-        left: 36%;
+        left: 40%;
         top: 15%;
         font-family: "Kaushan Script", cursive;
         font-weight: 300;
@@ -97,16 +97,12 @@
 
 <div class="welcome_user">
     <h1 class="wel">Welcome</h1>
-    <h2 class="wel" style="left: calc(36% + 187px)">{{user.username}}</h2>
+    <h2 class="wel" style="left: calc(36% + 233px)">{{user.username}}</h2>
 </div>
 <div class="box">
     <form method="post">
         <label for="todo" class="add px-3 py-3">Add Task</label> <br />
-        <input type="text" name="todo" class="mx-3 br" style="
-        width: calc(75% + 7%);
-        position: absolute;
-        top: 80px;
-        padding: 0.7rem;" />
+        <input type="text" name="todo" class="mx-3 br" style="width: calc(75% + 7%); position: absolute;top: 80px; padding: 0.7rem;" />
         <input type="submit"
             class="btn btn-dark rounded-0 px-3 position-absolute d-flex align-items-center justify-content-center"
             style="top: 80px;right: 53px;padding-top: 0.7rem;font-family: 'Montserrat';font-style: normal;font-weight: 700;font-size: 20px;" value="Add" />
@@ -114,7 +110,7 @@
     <div class="innerbox">
         {% for note in user.notes %}
         <div class="todolist br w-100 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input mx-2" name="checkbok" id="check"
+            <input type="checkbox" class="form-check-input mx-2" name="checkbok" id="check" title="Click to Delete the note"
                 onClick="deleteNote({{ note.id }})">
             <p class="note px-4">{{ note.data }}</p>
         </div>

@@ -2,15 +2,12 @@
 {%block title %}Login{% endblock %}
 {%block head %}
 <style>
- 
-
     .create {
         position: absolute;
         width: 556px;
         height: 48px;
         left: 476px;
         top: 147px;
-
         font-family: 'Work Sans';
         font-style: normal;
         font-weight: 500;
@@ -64,6 +61,18 @@
         color:white;
         cursor: pointer;
     }
+    .link
+    {
+        box-shadow: inset 0 0 0 0 #000000;
+        color: #000000;
+        margin: 0 -.25rem;
+        padding: 0 .25rem;
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+    .link:hover{
+        box-shadow:inset 170px 0 0 0 #000000;
+        color:white;
+    }
 </style>
 
 {%endblock%}
@@ -105,8 +114,8 @@
     </form>
 
 </div>
-<a href="/sign-up" class=" link-dark text-decoration-none text-dark signin position-absolute  "
-    style="font-size: 22px;bottom:8%; left:44%">Create Account</a>
+<a href="/sign-up" class="text-decoration-none signin link position-absolute"
+    style="font-size: 22px;bottom:6%; left:44%">Create Account</a>
 
 
 <script>
@@ -117,7 +126,7 @@
             password.type = "text"
             setTimeout(() => {
                 password.type = "password";
-              }, 1500);
+                }, 1500);
         })
     }
 </script>
