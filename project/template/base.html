@@ -21,6 +21,10 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <!-- <link rel="manifest" href="/project/static/images/site.webmanifest"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/site.webmanifest">
 
     <title>{%block title%}{%endblock %}</title>
     {%block head%}{%endblock %}
@@ -34,7 +38,7 @@
             padding: 0;
             box-sizing: border-box;
             letter-spacing: -0.02em;
-            text-transform:capitalize;
+            text-transform: capitalize;
         }
 
         body {
@@ -74,13 +78,14 @@
             {{ message }}
         </div>
         <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
-            
+
         </button>
     </div>
     {% else %}
 
 
-    <div class="alert alert-success d-flex align-items-center  justify-content-between  alert-dismissable fade show " role="alert">
+    <div class="alert alert-success d-flex align-items-center  justify-content-between  alert-dismissable fade show "
+        role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
             <use xlink:href="#check-circle-fill" />
         </svg>
@@ -88,11 +93,12 @@
             {{ message }}
         </div>
         <button type="button" class="btn-close " data-dismiss="alert" aria-label="Close">
-            
+
         </button>
     </div>
     {% endif %} {% endfor %} {% endif %} {% endwith %}
 </body>
+
 <script src="{{url_for('static', filename='index.js')}}"></script>
 
 </html>

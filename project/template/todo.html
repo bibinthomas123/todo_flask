@@ -63,6 +63,25 @@
         font-size: 20px;
         letter-spacing: 0.025em;
     }
+    
+    .line-through{
+        text-decoration: line-through;
+    }
+
+    .fadeout{
+        animation: fadeout 1s forwards;
+    }
+
+    @keyframes fadeout {
+        from{
+            opacity: 1;
+        }
+        to{
+            transform: translateX(-300px);
+            opacity: 0;
+        }
+        
+    }
 </style>
 
 {% endblock %} {%block body %}
@@ -102,17 +121,19 @@
 <div class="box">
     <form method="post">
         <label for="todo" class="add px-3 py-3">Add Task</label> <br />
-        <input type="text" name="todo" class="mx-3 br" style="width: calc(75% + 7%); position: absolute;top: 80px; padding: 0.7rem;" />
+        <input type="text" name="todo" class="mx-3 br"
+            style="width: calc(75% + 7%); position: absolute;top: 80px; padding: 0.7rem;" />
         <input type="submit"
-            class="btn btn-dark rounded-0 px-3 position-absolute d-flex align-items-center justify-content-center"
-            style="top: 80px;right: 53px;padding-top: 0.7rem;font-family: 'Montserrat';font-style: normal;font-weight: 700;font-size: 20px;" value="Add" />
+            class="btn btn-dark rounded-0 px-4 position-absolute d-flex align-items-center justify-content-center"
+            style="top: 80px;right: 53px;padding-top: 0.7rem;font-family: 'Montserrat';font-style: normal;font-weight: 700;font-size: 20px;"
+            value="Add" />
     </form>
     <div class="innerbox">
         {% for note in user.notes %}
-        <div class="todolist br w-100 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input mx-2" name="checkbok" id="check" title="Click to Delete the note"
-                onClick="deleteNote({{ note.id }})">
-            <p class="note px-4">{{ note.data }}</p>
+        <div class="todolist br w-100 d-flex align-items-center " id="effect">
+            <input type="checkbox" class="form-check-input mx-2  " name="checkbok" id="check"
+                title="Click to Delete the note" onClick="deleteNote({{ note.id }})">
+            <p class="note px-4 " id="linecut">{{ note.data }}</p>
         </div>
         {% endfor %}
     </div>

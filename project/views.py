@@ -1,10 +1,10 @@
-from flask import flash, render_template, Blueprint, url_for, request , jsonify
+from flask import flash, render_template, Blueprint, request , jsonify
 from .model import User ,Note
 from flask_sqlalchemy import SQLAlchemy
 from . import db
-from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_required,  current_user
 import json
+from time import sleep
 
 views = Blueprint('views', __name__)
 
@@ -27,8 +27,8 @@ def home():
 
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
+    sleep(0.7)
     note = json.loads(request.data)
-    print(note)
     noteId = note['noteId']
     note = Note.query.get(noteId)
     if note:
