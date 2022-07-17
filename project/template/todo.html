@@ -82,6 +82,7 @@
         }
         
     }
+
 </style>
 
 {% endblock %} {%block body %}
@@ -128,7 +129,7 @@
             style="top: 80px;right: 53px;padding-top: 0.7rem;font-family: 'Montserrat';font-style: normal;font-weight: 700;font-size: 20px;"
             value="Add" />
     </form>
-    <div class="innerbox">
+    <div class="innerbox container-fluid ">
         {% for note in user.notes %}
         <div class="todolist br w-100 d-flex align-items-center " id="effect">
             <input type="checkbox" class="form-check-input mx-2  " name="checkbok" id="check"

@@ -22,6 +22,7 @@ def home():
             db.session.add(new_note)
             db.session.commit()
             print(note)
+            print(current_user)
             # flash('Note added!', category='success')
     return render_template("todo.html", user=current_user)
 

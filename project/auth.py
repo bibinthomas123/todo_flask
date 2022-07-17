@@ -1,6 +1,6 @@
 from time import sleep
 from flask import Blueprint, render_template, request, flash, redirect, url_for, flash
-from .model import User
+from .model import  User,Note
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -17,7 +17,7 @@ def login():
         username = request.form.get("user_name")
         password = request.form.get('password')
 
-        user = User.query.filter_by(username=username).first() 
+        user = User.query.filter_by(username=username).first()
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
